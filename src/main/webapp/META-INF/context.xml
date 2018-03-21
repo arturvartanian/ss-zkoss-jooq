@@ -1,0 +1,8 @@
+<Context>
+
+    <Resource name="jdbc/authzk" auth="Container" type="javax.sql.DataSource"
+              maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+              username="arthurvartanyan" password="" driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://localhost:5432/authzk"/>
+
+</Context>

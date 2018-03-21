@@ -1,0 +1,16 @@
+<div hflex="1" vflex="1" sclass="banner">
+    <hbox hflex="1" vflex="1" align="center">
+        <!-- other components -->
+
+        <hbox apply="authorizationzkjooq.controllers.LogoutController"
+              hflex="1" vflex="1" pack="end" align="end" >
+            <label value="${sessionScope.userCredential.email}"
+                   if="${not sessionScope.userCredential.anonymous}"/>
+            <label style="cursor:pointer;text-decoration: underline;"
+                   value="@bind(vm.value)" onClick="@command('pickFromMember')" />
+
+            <a id="logout" label="Logout"
+                   if="${not sessionScope.userCredential.anonymous}" sclass="logout"/>
+        </hbox>
+    </hbox>
+</div>

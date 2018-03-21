@@ -1,0 +1,39 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<!-- it is a login page, no authentication protection and use anonymous template -->
+<?init class="org.zkoss.zk.ui.util.Composition"
+        arg0="/views/layout/anonymous-template.zul"?>
+<?page title="SoftServe Task"?>
+
+<zk>
+    <hbox self="@define(content)" vflex="1" hflex="1" align="center"
+          pack="center" spacing="20px">
+        <vlayout>
+            <window id="loginWin"
+                    apply="authorizationzkjooq.controllers.LoginController"
+                    title="Login with you email" border="normal" hflex="min">
+                <vbox hflex="min" align="center">
+                    <grid hflex="min">
+                        <columns>
+                            <column hflex="min" align="right" />
+                            <column />
+                        </columns>
+                        <rows>
+                            <row>
+                                E-mail :
+                                <textbox id="email" width="200px" />
+                            </row>
+                            <row>
+                                Password :
+                                <textbox id="password" type="password"
+                                         width="200px" />
+                            </row>
+                        </rows>
+                    </grid>
+                    <label id="message" sclass="warn" value="&#160;" />
+                    <button id="login" label="Login" />
+                    <a label="Sign up!" href="registration.zul"/>
+                </vbox>
+            </window>
+        </vlayout>
+    </hbox>
+</zk>
