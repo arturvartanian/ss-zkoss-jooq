@@ -1,0 +1,16 @@
+<zk>
+    <borderlayout hflex="1" vflex="1"
+                  if="${not sessionScope.userCredential.anonymous}">
+        <north height="100px" border="none">
+            <include src="/views/layout/banner.zul"/>
+        </north>
+        <center id="mainContent" autoscroll="true"
+                border="none" self="@insert(content)">
+        </center>
+        <south height="50px" border="none">
+        </south>
+    </borderlayout>
+    <div if="${sessionScope.userCredential.anonymous}">
+        Redirect to login page.....
+    </div>
+</zk>

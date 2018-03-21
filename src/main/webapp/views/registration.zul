@@ -1,0 +1,44 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<!-- it is a login page, no authentication protection and use anonymous template -->
+<?init class="org.zkoss.zk.ui.util.Composition"
+        arg0="/views/layout/anonymous-template.zul"?>
+<?page title="Registation"?>
+
+<zk>
+    <hbox self="@define(content)" vflex="1" hflex="1" align="center"
+          pack="center" spacing="20px">
+        <vlayout>
+            <window id="successSignUp"
+                    apply="authorizationzkjooq.controllers.RegistrationController"
+                    title="Login with you email" border="normal" hflex="min">
+                <vbox hflex="min" align="center">
+                    <grid hflex="min">
+                        <columns>
+                            <column hflex="min" align="right" />
+                            <column />
+                        </columns>
+                        <rows>
+                            <row>
+                                E-mail :
+                                <textbox id="email" width="200px" type="email"/>
+                            </row>
+                            <row>
+                                Password :
+                                <textbox id="password" type="password"
+                                         width="200px" />
+                            </row>
+                            <row>
+                                Repeat password :
+                                <textbox id="repeatPassword" type="password"
+                                         width="200px" />
+                            </row>
+                        </rows>
+                    </grid>
+                    <label id="message" sclass="warn" value="&#160;" />
+                    <button id="signup" label="Sign Up" />
+                    <a label="Login" href="login.zul"/>
+                </vbox>
+            </window>
+        </vlayout>
+    </hbox>
+</zk>
