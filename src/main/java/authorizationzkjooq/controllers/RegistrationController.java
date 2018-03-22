@@ -52,7 +52,7 @@ public class RegistrationController extends SelectorComposer<Component> {
             message.setValue("Wrong email format!");
             return false;
         }
-        if (userService.findUser(email.getValue()) != null){
+        if (userService.findUser(email.getValue()).getId() != null){
             message.setValue("User with such email already exist!");
             return false;
         }
